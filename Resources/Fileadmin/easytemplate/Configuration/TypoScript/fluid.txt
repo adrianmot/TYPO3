@@ -1,0 +1,36 @@
+# Layout
+page.10 = FLUIDTEMPLATE
+page.10 {
+	file.stdWrap.cObject = TEXT
+	file.stdWrap.cObject {
+		data = levelfield:-1, backend_layout_next_level, slide
+		override.field = backend_layout
+		split {
+			token = file__
+			1.current = 1
+			1.wrap = |
+		}
+		wrap = fileadmin/easytemplate/Resources/Private/Templates/Page/|.html
+	}
+
+	layoutRootPath = fileadmin/easytemplate/Resources/Private/Layouts
+	partialRootPath = fileadmin/easytemplate/Resources/Private/Partials
+
+	variables {
+
+		sysLanguage = TEXT
+		sysLanguage.data = GP:L
+
+		belayout.data = levelfield:-1, backend_layout_next_level, slide
+		belayout.override.field = backend_layout
+
+		header < styles.content.get
+		header.select.where = colPos = 0
+
+		content < styles.content.get
+		content.select.where = colPos = 1
+
+		footer < styles.content.get
+		footer.select.where = colPos = 2
+	}
+}

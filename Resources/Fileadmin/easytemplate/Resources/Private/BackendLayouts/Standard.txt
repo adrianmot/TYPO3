@@ -1,0 +1,14 @@
+backend_layout {
+	colCount = 1
+	rowCount = 3
+	rows {
+		1 {
+			columns {
+				1 {
+					name = content
+					colPos = 1
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+$baseFontSize: 14;
+$baseLineHeight: 13.8;
+$bigFontSize: 16;
+$biggerFontSize: 18;
+
+$greyColor: #ccc;
+$bodyColor: #fff;
+
+// Convert px to rem
+@mixin font-size($sizeValue) {
+	font-size: $sizeValue + px;
+	font-size: ($sizeValue/$baseFontSize) + rem;
+}
+
+@mixin line-height($sizeValue) {
+	line-height: $sizeValue + px;
+	line-height: ($sizeValue/$baseLineHeight) + rem;
+}

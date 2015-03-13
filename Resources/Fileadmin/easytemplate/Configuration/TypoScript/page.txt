@@ -1,0 +1,40 @@
+# Default PAGE object:
+page = PAGE
+page {
+	typeNum = 0
+
+	headTag (
+    	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<script type="text/javascript" src="/{$plugin.tx_easytemplate.view.resPathPublic}Javascripts/jquery-2.0.3.min.js"></script>
+		<script src="/{$plugin.tx_easytemplate.view.resPathPublic}Javascripts/modernizr.js"></script>
+		<!--[if lte IE 9]>
+		<script type="text/javascript" src="/{$plugin.tx_easytemplate.view.resPathPublic}Javascripts/html5shiv.js"></script>
+		<![endif]-->
+	)
+
+	bodyTagCObject = COA
+	bodyTagCObject {
+	}
+
+	includeCSS {
+		app = {$plugin.tx_easytemplate.view.resPathPublic}Stylesheets/app.css
+
+		print = {$plugin.tx_easytemplate.view.resPathPublic}Stylesheets/print.css
+		print.media = print
+	}
+
+	includeJSFooter {
+		main = {$plugin.tx_easytemplate.view.resPathPublic}Javascripts/main.js
+		bootstrap = {$plugin.tx_easytemplate.view.resPathPublic}Vendor/Bootstrap/js/bootstrap.min.js
+	}
+
+	meta {
+		description.field = description // abstract
+		keywords.field = keywords
+		author.field = author
+		robots = index,follow
+		viewport = width=device-width,initial-scale=1.0, maximum-scale=1
+	}
+}

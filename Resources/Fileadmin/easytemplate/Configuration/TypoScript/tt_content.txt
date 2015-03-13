@@ -1,0 +1,157 @@
+plugin.tx_cssstyledcontent._CSS_DEFAULT_STYLE >
+NO.ATagTitle.field = description // subtitle // title
+
+lib.stdheader {
+	10 {
+		1.dataWrap = <h1>|</h1>
+		1.dataWrap.insertData = 1
+		2.dataWrap = <h2>|</h2>
+		2.dataWrap.insertData = 1
+		3.dataWrap = <h3>|</h3>
+		3.dataWrap.insertData = 1
+		4.dataWrap = <h4>|</h4>
+		4.dataWrap.insertData = 1
+		5.dataWrap = <h5>|</h5>
+		5.dataWrap.insertData = 1
+	}
+
+	stdWrap {
+		dataWrap >
+	}
+}
+
+temp.imageSettings2 < temp.imageSettings1
+temp.imageSettings2 {
+	20 {
+		1 {
+			params >
+
+			file {
+				width >
+				width = 300-0
+
+				height >
+				height = 200-0
+
+				maxW >
+				maxW = 400
+
+				maxH >
+				maxH = 300
+			}
+		}
+	}
+}
+
+tt_content {
+	stdWrap {
+		innerWrap >
+		dataWrap >
+		prefixComment >
+	}
+
+	default {
+		prefixComment >
+	}
+
+	text {
+		stdWrap.outerWrap = <div class="text">|</div>
+	}
+
+	textpic {
+		#stdWrap.outerWrap = <div id="c{field:uid}" class="textpic align-{field:header_position} layout-{field:layout}"><div class="row"><div class="container"><div class="row"><div class="col-md-12">|</div></div></div></div>
+		stdWrap.outerWrap = <div id="c{field:uid}" class="textpic">|</div>
+
+		20 {
+			text.wrap = |
+		}
+
+		stdWrap.outerWrap.insertData = 1
+	}
+
+	image {
+		stdWrap.outerWrap = |
+
+		20 {
+			1 {
+				file {
+					maxW {
+						cObject = CASE
+						cObject {
+							key.field = imageorient
+
+							#0 = TEXT
+							#0.value = 260
+
+							#1 = TEXT
+							#1.value = 260
+						}
+
+						override.field = imagewidth
+					}
+
+					maxH {
+						cObject = CASE
+						cObject {
+							key.field = imageorient
+
+							#0 = TEXT
+							#0.value = 144
+
+							#1 = TEXT
+							#1.value = 144
+						}
+					}
+				}
+			}
+
+			renderMethod = simple
+
+			prefixComment >
+			imageStdWrap.wrap = |
+			imageStdWrapNoWidth.wrap = |
+			imageColumnStdWrap.wrap = |
+
+			layout {
+				# default = 0, in text right
+				key.field = imageorient
+				default = TEXT
+				default.value = <div class="images-wrap">###IMAGES###</div><div class="text-wrap">###TEXT###</div>
+
+				# in text left
+				1 = TEXT
+				1.value = <div class="images-wrap">###IMAGES###</div><div class="text-wrap">###TEXT###</div>
+
+				# above text center
+				2 = TEXT
+				2.value =<div class="images-wrap">###IMAGES###</div><div class="text-wrap">###TEXT###</div>
+			}
+
+			imageStdWrap.wrap = |
+
+			rendering {
+				simple {
+					imageStdWrap.dataWrap = |
+				}
+			}
+		}
+
+		stdWrap.outerWrap.insertData = 1
+	}
+
+	media {
+		#20.stdWrap.wrap = <div class="media-wrap">|</div>
+		#stdWrap.outerWrap.insertData = 1
+	}
+
+	stdWrap {
+		innerWrap {
+		}
+
+		outerWrap {
+		}
+	}
+
+}
+
+#tt_content.stdWrap.innerWrap >

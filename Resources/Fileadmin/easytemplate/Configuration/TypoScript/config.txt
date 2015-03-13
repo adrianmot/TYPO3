@@ -1,0 +1,92 @@
+config {
+	baseURL = {$protocol}://{$host}/
+	admPanel = 0
+
+	removeDefaultJS = 1
+	removeDefaultJS = external
+	removeDefaultCss = 1
+
+	concatenateJs = 0
+	concatenateCss = 0
+	compressJs = 1
+	compressCss = 1
+
+	spamProtectEmailAddresses = 3
+
+	meaningfulTempFilePrefix = 50
+	doctype = html5
+	inlineStyle2TempFile = 1
+	moveJsFromHeaderToFooter = 1
+
+	pageTitleFirst = 1
+	pageTitleSeparator = :
+	noPageTitle = 1
+
+	# Include Boilerplate handling for IE browsers
+	htmlTag_stdWrap {
+		setContentToCurrent = 1
+		cObject = COA
+		cObject {
+			10 = LOAD_REGISTER
+			10 {
+				newLine.char = 10
+				tagEnd {
+					current = 1
+					split.max = 2
+					split.token = <html
+					split.returnKey = 1
+				}
+			}
+
+			20 = TEXT
+			20.value = <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"{register:tagEnd} <![endif]-->
+			20.wrap = |{register:newLine}
+			20.insertData = 1
+
+			#30 < .20
+			#30.value = <!--[if gt IE 8]> <html class="no-js gt-ie9 lt-ie8"{register:tagEnd} <![endif]-->
+			40 < .20
+			40.value = <!--[if IE 9]> <html class="no-js ie9 gt-ie9"{register:tagEnd} <![endif]-->
+			45 < .20
+			45.value = <!--[if IE 10]> <html class="no-js ie10 gt-ie9"{register:tagEnd} <![endif]-->
+			50 < .20
+			50.value = <!--[if gt IE 9]><!--> <html class="no-js "{register:tagEnd} <!--<![endif]-->
+
+			90 = RESTORE_REGISTER
+		}
+	}
+
+	# 50 Tage
+	cache_period = 4320000
+
+	# encoding
+	metaCharset = utf-8
+
+	# realURL
+	simulateStaticDocuments = 0
+	prefixLocalAnchors = all
+	tx_realurl_enable = 0
+
+	disablePrefixComment = 1
+	typolinkCheckRootline = 1
+
+	# search/indexing
+	no_cache = 0
+	cache = 0
+
+	index_enable = 0
+	index_externals = 0
+	index_metatags = 1
+
+	# lang settings
+	sys_language_uid = 0
+	language = de
+	locale_all = de_DE.UTF-8
+
+	linkVars = L
+	linkVars := addToList(L)
+	uniqueLinkVars = 1
+
+	sys_language_mode = strict
+	sys_language_overlay = hideNonTranslated
+}

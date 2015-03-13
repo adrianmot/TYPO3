@@ -1,0 +1,17 @@
+/*
+include local fonts?
+@font-face {font-family: 'My-Font';src: url('../Fonts/MyFont.eot');src: url('../Fonts/MyFont?#iefix') format('embedded-opentype'),url('../Fonts/MyFont.woff2') format('woff2'),url('../Fonts/MyFont.woff') format('woff'),url('../Fonts/MyFont.ttf') format('truetype');}
+*/
+
+html, body {
+	font-size: $baseFontSize + px;
+}
+
+.layout {
+	margin: 0 auto;
+	width: 960px;
+
+	.content {
+		margin: 20px 0;
+	}
+}

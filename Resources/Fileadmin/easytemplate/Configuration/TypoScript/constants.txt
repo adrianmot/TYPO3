@@ -1,0 +1,39 @@
+plugin.tx_easytemplate {
+	view {
+		# cat=plugin.tx_easytemplate/file; type=string; label=Path to template root (FE)
+		templateRootPath = fileadmin/easytemplate/Resources/Private/Pages/
+		# cat=plugin.tx_easytemplate/file; type=string; label=Path to template partials (FE)
+		partialRootPath = fileadmin/easytemplate/Resources/Private/Partials/
+		# cat=plugin.tx_easytemplate/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = fileadmin/easytemplate/Resources/Private/Layouts/
+		# cat=plugin.tx_easytemplate/file; type=string; label=Path to public folder (FE)
+		resPathPublic = fileadmin/easytemplate/Resources/Public/
+		# cat=plugin.tx_easytemplate/file; type=string; label=Path to ts folder (FE)
+		tsPath = fileadmin/easytemplate/Configuation/TypoScript/
+	}
+
+	settings {
+		# cat=plugin.tx_easytemplate/settings; type=int+; label=Main Navigation PID
+		navMainFolderUid = 1
+	}
+
+	persistence {
+		# cat=plugin.tx_easytemplate//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+protocol = http
+
+[globalString = IENV:LS_SSL=1]
+	protocol = https
+[global]
+
+# cat=plugin.tx_easytemplate/host; type=string; label=Domain / Hostname
+host = www.yourdomain.com
+
+[globalString = IENV:HTTP_HOST=staging.yourdomain.com]
+	host = staging.yourdomain.com
+[globalString = IENV:HTTP_HOST=your.dev-host.local]
+	host = your.dev-host.local
+[global]

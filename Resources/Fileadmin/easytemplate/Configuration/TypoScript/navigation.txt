@@ -1,0 +1,29 @@
+temp.navAll = TMENU
+temp.navAll {
+	noBlur = 1
+
+	NO {
+		wrapItemAndSub = <li>|</li>
+		stdWrap.htmlSpecialChars = 1
+	}
+
+	ACT = 1
+	ACT {
+		wrapItemAndSub = <li>|</li>
+		ATagParams = class="active"
+	}
+
+	CUR = 1
+	CUR < .ACT
+}
+
+# navMain
+lib.navMain = HMENU
+lib.navMain {
+	special = directory
+	special.value = {$plugin.tx_easytemplate.settings.navMainFolderUid}
+	entryLevel = 0
+	wrap = <ul>|</ul>
+
+	1 < temp.navAll
+}

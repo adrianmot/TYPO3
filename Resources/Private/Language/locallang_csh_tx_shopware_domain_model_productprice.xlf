@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-13T17:11:15Z" product-name="shopware">
+		<header/>
+		<body>
+			<trans-unit id="base.description">
+				<source>base</source>
+			</trans-unit>
+			<trans-unit id="pricefrom.description">
+				<source>pricefrom</source>
+			</trans-unit>
+			<trans-unit id="priceto.description">
+				<source>priceto</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="pricegroup.description">
+				<source>pricegroup</source>
+			</trans-unit>
+			<trans-unit id="percent.description">
+				<source>percent</source>
+			</trans-unit>
+			<trans-unit id="product.description">
+				<source>product</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

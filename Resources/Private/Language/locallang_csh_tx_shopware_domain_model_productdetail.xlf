@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-13T17:11:15Z" product-name="shopware">
+		<header/>
+		<body>
+			<trans-unit id="active.description">
+				<source>active</source>
+			</trans-unit>
+			<trans-unit id="ean.description">
+				<source>ean</source>
+			</trans-unit>
+			<trans-unit id="height.description">
+				<source>height</source>
+			</trans-unit>
+			<trans-unit id="width.description">
+				<source>width</source>
+			</trans-unit>
+			<trans-unit id="weight.description">
+				<source>weight</source>
+			</trans-unit>
+			<trans-unit id="ordernumber.description">
+				<source>ordernumber</source>
+			</trans-unit>
+			<trans-unit id="packunit.description">
+				<source>packunit</source>
+			</trans-unit>
+			<trans-unit id="min_purchase.description">
+				<source>minPurchase</source>
+			</trans-unit>
+			<trans-unit id="max_purchase.description">
+				<source>maxPurchase</source>
+			</trans-unit>
+			<trans-unit id="product.description">
+				<source>product</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

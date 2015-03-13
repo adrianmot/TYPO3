@@ -1,0 +1,49 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Category</h1>
+
+<f:flashMessages />
+
+<table  class="tx_shopware" >
+	<tr>
+		<th><f:translate key="tx_shopware_domain_model_category.sid" /></th>
+		<th><f:translate key="tx_shopware_domain_model_category.description" /></th>
+		<th><f:translate key="tx_shopware_domain_model_category.position" /></th>
+		<th><f:translate key="tx_shopware_domain_model_category.image" /></th>
+		<th><f:translate key="tx_shopware_domain_model_category.pleft" /></th>
+		<th><f:translate key="tx_shopware_domain_model_category.pright" /></th>
+		<th><f:translate key="tx_shopware_domain_model_category.product" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{categories}" as="category">
+		<tr>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.sid}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.position}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.image}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.pleft}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.pright}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.product}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{category : category}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{category : category}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Category</f:link.action>
+</f:section>

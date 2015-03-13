@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-13T17:11:15Z" product-name="shopware">
+		<header/>
+		<body>
+			<trans-unit id="sid.description">
+				<source>sid</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="position.description">
+				<source>position</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="pleft.description">
+				<source>pleft</source>
+			</trans-unit>
+			<trans-unit id="pright.description">
+				<source>pright</source>
+			</trans-unit>
+			<trans-unit id="product.description">
+				<source>product</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

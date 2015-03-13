@@ -26,7 +26,7 @@ if (TYPO3_MODE === 'BE') {
 		'shopware',	// Submodule key
 		'',						// Position
 		array(
-			'Backend' => 'import, update',
+			'Backend' => 'module, import, update',
 		),
 		array(
 			'access' => 'user,group',

@@ -45,6 +45,22 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	 */
 	protected $categoryRepository = NULL;
 
+	/**
+	 * productRepository
+	 *
+	 * @var \LS\Shopware\Domain\Repository\ProductRepository
+	 * @inject
+	 */
+	protected $productRepository = NULL;
+
+	/**
+	 * logRepository
+	 *
+	 * @var \LS\Shopware\Domain\Repository\LogRepository
+	 * @inject
+	 */
+	protected $logRepository = NULL;
+
 	public function initializeAction() {
 		$settings = array(
 			'apiUrl' => 'http://shopware.marc.loc/api/',
@@ -54,6 +70,25 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
 		$this->client = $this->objectManager->get('LS\\Shopware\\Api\\Client');
 		$this->client->initialize($settings);
+	}
+
+	/**
+	 * action module
+	 *
+	 * @return void
+	 */
+	public function moduleAction() {
+		$log = $this->logRepository->findAll();
+		$categories = $this->categoryRepository->findAll();
+		$products = $this->productRepository->findAll();
+
+		$this->view->assignMultiple(
+			array(
+				'log' => $log,
+				'categories' => $categories,
+				'products' => $products
+			)
+		);
 	}
 
 	/**

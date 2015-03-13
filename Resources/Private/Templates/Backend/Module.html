@@ -1,0 +1,28 @@
+<f:layout name="Backend" />
+
+<f:section name="main">
+	<h2>Shopware Settings</h2>
+	<p>In Progress</p>
+
+	<h2>Stats</h2>
+	<p class="log">
+		<f:if condition="{log}">
+			<f:then>
+				<f:for each="{log}" as="entry">
+					{entry.lastaction}: {entry.lasttstamp}<br />
+				</f:for>
+			</f:then>
+			<f:else>
+				No log entry found
+			</f:else>
+		</f:if>
+	</p>
+
+	<p class="categories">
+		<f:count>{categories}</f:count> Categories available
+	</p>
+
+	<p class="products">
+		<f:count>{products}</f:count> Products available
+	</p>
+</f:section>

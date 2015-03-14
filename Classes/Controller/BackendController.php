@@ -97,6 +97,13 @@ class BackendController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	 * @return void
 	 */
 	public function importAction() {
+		$categories = $this->client->get('categories');
+
+		$this->view->assignMultiple(
+			array(
+				'categories' => $categories
+			)
+		);
 	}
 
 	/**

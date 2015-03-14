@@ -44,6 +44,8 @@ class Client {
 
 	public $cURL;
 
+	protected $debug = false;
+
 	/**
 	 * @param array $settings
 	 */
@@ -93,7 +95,11 @@ class Client {
         $result   = curl_exec($this->cURL);
         $httpCode = curl_getinfo($this->cURL, CURLINFO_HTTP_CODE);
 
-        return $this->prepareResponse($result, $httpCode);
+		if ($this->debug === true) {
+			return $this->prepareResponse($result, $httpCode);
+		} else {
+			return json_decode($result, true);
+		}
     }
 
 	/**

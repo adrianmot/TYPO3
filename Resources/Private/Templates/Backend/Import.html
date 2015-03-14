@@ -2,5 +2,23 @@
 
 <f:section name="main">
 	<h2>Import data from Shopware</h2>
-	<p>There are <strong><f:count>{categories.data}</f:count></strong> categories ready to import.</p>
+	<p>There are <strong>{categories.total}</strong> categories ready to import.<br />
+	...containing <strong>{products.total}</strong> products to import.</p>
+
+	<table id="cat_table">
+		<thead>
+			<th>&nbsp;</th>
+			<th>ID</th>
+			<th>Name</th>
+		</thead>
+		<tbody>
+		<f:for each="{categories.data}" as="category">
+			<tr>
+				<td><input type="checkbox" name="lssw_cat[]" value="{category.id}" /></td>
+				<td>{category.id}</td>
+				<td><f:if condition="{category.parentId} == {category.id}">+ </f:if><strong>{category.name}</strong> <span style="font-style: italic;">({category.articleCount} articles)</span></td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
 </f:section>
